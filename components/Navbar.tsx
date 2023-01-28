@@ -1,0 +1,129 @@
+import useClickOutsideToClose from "@/lib/hooks/useClickOutsideToClose";
+import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useState } from "react";
+
+const navbarLinks = [
+  {
+    link: "/",
+    displayText: "Home",
+  },
+  {
+    link: "/destination",
+    displayText: "Destination",
+  },
+  {
+    link: "/crew",
+    displayText: "Crew",
+  },
+  {
+    link: "/technology",
+    displayText: "Technology",
+  },
+];
+
+export default function Navbar() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const domNode = useClickOutsideToClose(closeMenu)
+
+  const pathName = usePathname();
+
+  function closeMenu() {
+    setIsMenuOpen(false);
+  }
+
+  function toggleMenu() {
+    setIsMenuOpen((prev) => !prev);
+  }
+
+  // this function converts 1 => 01 or 2 => 02
+  const addZeroInFront = (index: Number): String => {
+    return String("0" + index).slice(-2);
+  };
+
+  return (
+    <header className="fixed top-0 flex h-24 w-screen items-center justify-between bg-primary-500/50 px-6 font-barlow-condensed text-lg tracking-widest backdrop-blur-xl lg:px-12 ">
+      {/*main logo*/}
+      <div className="relative aspect-square w-10 md:w-12">
+        <Image src={"/shared/logo.svg"} alt={"Main logo"} fill={true} />
+      </div>
+
+      <div ref={domNode} className="max-md:h-10">
+        <button
+          className="relative z-50 h-10 w-10 md:hidden"
+          onClick={toggleMenu}
+        >
+          <svg
+            className={`${
+              isMenuOpen ? "rotate-180" : ""
+            } z-50 h-full w-full transition-all duration-200`}
+            viewBox="0 0 148 139"
+            fill="white"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <rect
+              className={`${
+                isMenuOpen ? "rotate-45" : ""
+              } origin-center transition-all duration-200`}
+              x="18"
+              y={isMenuOpen ? "62" : "27"} // for better animations
+              width="112"
+              height="10"
+              rx="5"
+            />
+            <rect
+              className={`${
+                isMenuOpen ? "opacity-0" : "opacity-100"
+              } transition-all duration-200`}
+              x="18"
+              y="62"
+              width="112"
+              height="10"
+              rx="5"
+            />
+            <rect
+              className={`${
+                isMenuOpen ? "-rotate-45" : ""
+              } origin-center transition-all duration-200`}
+              x="18"
+              y={isMenuOpen ? "62" : "97"} // for better animations
+              width="112"
+              height="10"
+              rx="5"
+            />
+          </svg>
+        </button>
+        <aside
+          className={`${
+            isMenuOpen ? "max-md:translate-x-0" : "max-md:translate-x-full"
+          } max-md z-40 grid place-items-center bg-primary-500 transition-all duration-200 max-md:fixed max-md:inset-y-0 max-md:right-0 max-md:h-screen max-md:w-3/4 max-md:max-w-sm`}
+        >
+          <nav className="">
+            <ul className="flex justify-between gap-8 max-md:flex-col max-md:items-start md:items-center lg:gap-12">
+              {navbarLinks.map((item, index) => {
+                return (
+                  <li key={item.link}>
+                    <Link
+                      href={item.link}
+                      className={`inline-block md:py-8 ${
+                        pathName === item.link
+                          ? "border-b-2 border-b-white"
+                          : ""
+                      }`}
+                    >
+                      <span className="mr-2 font-bold">
+                        {addZeroInFront(index)}
+                      </span>
+                      <span>{item.displayText}</span>
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
+          </nav>
+        </aside>
+      </div>
+    </header>
+  );
+}
