@@ -97,35 +97,34 @@ export default function Navbar() {
             />
           </svg>
         </button>
-        <aside
+        <nav
           className={`${
             isMenuOpen ? "max-md:translate-x-0" : "max-md:translate-x-full"
           } max-md z-40 grid place-items-center bg-primary-500 transition-all duration-200 max-md:fixed max-md:inset-y-0 max-md:right-0 max-md:h-screen max-md:w-3/4 max-md:max-w-sm`}
         >
-          <nav className="">
-            <ul className="flex justify-between gap-8 max-md:flex-col max-md:items-start md:items-center lg:gap-12">
-              {navbarLinks.map((item, index) => {
-                return (
-                  <li key={item.link}>
-                    <Link
-                      href={item.link}
-                      className={`inline-block md:py-8 ${
-                        pathName === item.link
-                          ? "border-b-2 border-b-white"
-                          : ""
-                      }`}
-                    >
-                      <span className="mr-2 font-bold">
-                        {addZeroInFront(index)}
-                      </span>
-                      <span>{item.displayText}</span>
-                    </Link>
-                  </li>
-                );
-              })}
-            </ul>
-          </nav>
-        </aside>
+          <ul className="flex justify-between gap-8 max-md:flex-col max-md:items-start md:items-center lg:gap-12">
+            {navbarLinks.map((item, index) => {
+              return (
+                <li key={item.link} className="relative">
+                  <Link
+                    href={item.link}
+                    className={`shadow-border-b inline-block py-8 transition-all duration-200`}
+                  >
+                    <span className="mr-2 font-bold">
+                      {addZeroInFront(index)}
+                    </span>
+                    <span>{item.displayText}</span>
+                  </Link>
+                  <div
+                    className={`absolute bottom-0 h-0.5 w-full bg-white ${
+                      pathName === item.link ? "opacity-100" : "opacity-0"
+                    }`}
+                  ></div>
+                </li>
+              );
+            })}
+          </ul>
+        </nav>
       </div>
     </header>
   );
