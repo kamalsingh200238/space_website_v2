@@ -45,16 +45,24 @@ export default function Navbar() {
   return (
     <header className="fixed top-0 flex h-24 w-screen items-center justify-between bg-primary-500/50 px-6 font-barlow-condensed text-lg tracking-widest backdrop-blur-xl lg:px-12 ">
       {/*main logo*/}
-      <div className="relative aspect-square w-10 md:w-12">
-        <Link href={"/"} className="">
-          <Image src={"/shared/logo.svg"} alt={"Main logo"} fill={true} />
+      <Link
+        href={"/"}
+        className="focus-visible:outline-none focus-visible:ring focus-visible:ring-white"
+      >
+        <div className="relative aspect-square w-10 md:w-12">
+          <Image
+            src={"/shared/logo.svg"}
+            alt={"Main logo"}
+            fill={true}
+            className=""
+          />
           <span className="sr-only">link will take you to home page</span>
-        </Link>
-      </div>
+        </div>
+      </Link>
 
       <div ref={domNode} className="max-md:h-10">
         <button
-          className="relative z-50 h-10 w-10 md:hidden"
+          className="relative z-50 h-10 w-10 focus-visible:outline-none focus-visible:ring focus-visible:ring-white md:hidden"
           onClick={toggleMenu}
         >
           <svg
