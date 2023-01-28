@@ -110,10 +110,10 @@ export default function Navbar() {
                     href={item.link}
                     className={`shadow-border-b inline-block transition-all duration-200 md:py-8`}
                   >
-                    <span className="mr-2 font-bold">
+                    <span className="mr-3 font-bold">
                       {addZeroInFront(index)}
                     </span>
-                    <span>{item.displayText}</span>
+                    <span className="uppercase">{item.displayText}</span>
                   </Link>
                   <div
                     className={`absolute bottom-0 h-0.5 w-full bg-white ${
