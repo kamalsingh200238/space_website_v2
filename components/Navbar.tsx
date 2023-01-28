@@ -108,7 +108,7 @@ export default function Navbar() {
                 <li key={item.link} className="relative">
                   <Link
                     href={item.link}
-                    className={`shadow-border-b inline-block py-8 transition-all duration-200`}
+                    className={`shadow-border-b inline-block transition-all duration-200 md:py-8`}
                   >
                     <span className="mr-2 font-bold">
                       {addZeroInFront(index)}
