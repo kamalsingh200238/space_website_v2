@@ -25,7 +25,7 @@ const navbarLinks = [
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const domNode = useClickOutsideToClose(closeMenu)
+  const domNode = useClickOutsideToClose(closeMenu);
 
   const pathName = usePathname();
 
@@ -46,7 +46,10 @@ export default function Navbar() {
     <header className="fixed top-0 flex h-24 w-screen items-center justify-between bg-primary-500/50 px-6 font-barlow-condensed text-lg tracking-widest backdrop-blur-xl lg:px-12 ">
       {/*main logo*/}
       <div className="relative aspect-square w-10 md:w-12">
-        <Image src={"/shared/logo.svg"} alt={"Main logo"} fill={true} />
+        <Link href={"/"} className="">
+          <Image src={"/shared/logo.svg"} alt={"Main logo"} fill={true} />
+          <span className="sr-only">link will take you to home page</span>
+        </Link>
       </div>
 
       <div ref={domNode} className="max-md:h-10">
