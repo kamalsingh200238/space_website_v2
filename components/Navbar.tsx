@@ -100,7 +100,7 @@ export default function Navbar() {
         <nav
           className={`${
             isMenuOpen ? "max-md:translate-x-0" : "max-md:translate-x-full"
-          } max-md z-40 grid place-items-center bg-primary-500 transition-all duration-200 max-md:fixed max-md:inset-y-0 max-md:right-0 max-md:h-screen max-md:w-3/4 max-md:max-w-sm`}
+          } max-md z-40 grid place-items-center transition-all duration-200 max-md:fixed max-md:inset-y-0 max-md:right-0 max-md:h-screen max-md:w-3/4 max-md:max-w-sm max-md:bg-primary-500`}
         >
           <ul className="flex justify-between gap-8 max-md:flex-col max-md:items-start md:items-center lg:gap-12">
             {navbarLinks.map((item, index) => {
