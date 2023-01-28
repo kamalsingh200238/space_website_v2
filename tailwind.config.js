@@ -26,17 +26,32 @@ module.exports = {
         },
       },
       fontFamily: {
-        belefair: ["var(--belefair-font)", ...defaultTheme.fontFamily.sans],
+        bellefair: ["var(--bellefair-font)", ...defaultTheme.fontFamily.sans],
         barlow: ["var(--barlow-font)", ...defaultTheme.fontFamily.sans],
         ["barlow-condensed"]: [
           "var(--barlow-condensed-font)",
           ...defaultTheme.fontFamily.sans,
         ],
       },
+      backgroundImage: {
+        "home-mobile": "url('/home/background-home-mobile.jpg')",
+        "home-tablet": "url('/home/background-home-tablet.jpg')",
+        "home-desktop": "url('/home/background-home-desktop.jpg')",
+        "destination-mobile": "url('/destination/background-destination-mobile.jpg')",
+        "destination-tablet": "url('/destination/background-destination-tablet.jpg')",
+        "destination-desktop":
+          "url('/destination/background-home-destination.jpg')",
+        "crew-mobile": "url('/crew/background-crew-mobile.jpg')",
+        "crew-tablet": "url('/crew/background-crew-tablet.jpg')",
+        "crew-desktop": "url('/crew/background-crew-desktop.jpg')",
+        "technology-mobile": "url('/crew/background-technology-mobile.jpg')",
+        "technology-tablet": "url('/crew/background-technology-tablet.jpg')",
+        "technology-desktop": "url('/crew/background-technology-desktop.jpg')",
+      },
     },
     tracking: {
-      widest: '2.7px'
-    }
+      widest: "2.7px",
+    },
   },
   plugins: [],
 };
