@@ -28,7 +28,11 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/logo.svg" />
       </Head>
-      <main className="text-rose-500">Howdy</main>
+      <div
+        className={`min-h-screen bg-primary-500 text-white ${barlow.variable} ${barlowCondensed.variable} ${bellefair.variable}`}
+      >
+        <Navbar />
+      </div>
     </>
   );
 }
