@@ -24,6 +24,17 @@ module.exports = {
           // 800: "",
           // 900: "",
         },
+        seconday: {
+          // 100: "",
+          // 200: "",
+          // 300: "",
+          // 400: "",
+          500: "#D0D6F9",
+          // 600: "",
+          // 700: "",
+          // 800: "",
+          // 900: "",
+        }
       },
       fontFamily: {
         bellefair: ["var(--bellefair-font)", ...defaultTheme.fontFamily.sans],
