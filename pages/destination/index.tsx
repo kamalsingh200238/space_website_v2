@@ -41,7 +41,7 @@ export default function Destination({
           <section className="hero-size grid justify-center px-6 py-28 md:px-40 md:py-52">
             <div className="max-w-5xl">
               <div className="tracking-widest">
-                <h1 className="mb-8 text-center font-barlow-condensed uppercase md:mb-14 md:text-left md:text-xl">
+                <h1 className="mb-8 text-center font-barlow-condensed uppercase md:mb-14 md:text-left md:text-xl lg:mb-16 lg:text-3xl">
                   <span className="mr-4 text-white/25">01</span>Pick Your
                   Destination
                 </h1>
@@ -54,8 +54,8 @@ export default function Destination({
                     fill={true}
                   />
                 </div>
-                <div className="text-center">
-                  <div className="mb-5 flex justify-center gap-7 md:mb-8 md:gap-9">
+                <div className="text-center lg:text-left">
+                  <div className="mb-5 flex justify-center gap-7 md:mb-8 md:gap-9 lg:justify-start">
                     {destinationData.map((destination, index) => {
                       return (
                         <button
@@ -80,11 +80,11 @@ export default function Destination({
                     </h2>
                   </div>
                   <div>
-                    <p className="mb-8 max-w-lg font-barlow md:mb-12 text-seconday-500">
+                    <p className="mb-8 max-w-lg font-barlow text-seconday-500 md:mb-12">
                       {activeDestination.description}
                     </p>
                   </div>
-                  <div className="border-t gap-8 md:gap-24 border-t-white/25 py-8 flex flex-col md:flex-row justify-center">
+                  <div className="flex flex-col justify-center gap-8 border-t border-t-white/25 py-8 md:flex-row md:gap-24 lg:justify-start">
                     <div className="">
                       <p className="mb-3 font-barlow-condensed uppercase tracking-widest text-seconday-500">
                         avg. distance
