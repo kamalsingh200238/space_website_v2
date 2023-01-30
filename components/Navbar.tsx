@@ -43,7 +43,7 @@ export default function Navbar() {
   };
 
   return (
-    <header className="fixed top-0 flex h-24 w-screen items-center justify-between bg-primary-500/50 px-6 font-barlow-condensed text-lg tracking-widest backdrop-blur-xl lg:px-12 ">
+    <header className="fixed top-0 flex h-24 w-screen items-center justify-between bg-primary-500/50 px-6 font-barlow-condensed text-lg tracking-widest text-white backdrop-blur-xl lg:px-12 ">
       {/*main logo*/}
       <Link
         href={"/"}
