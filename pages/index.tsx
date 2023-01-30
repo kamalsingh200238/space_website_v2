@@ -9,9 +9,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/logo.svg" />
       </Head>
-      <div
-        className="min-h-screen bg-primary-500 text-white"
-      >
+      <div className="min-h-screen bg-primary-500 text-white">
         <div
           id="content"
           className="bg-home-mobile bg-cover bg-no-repeat md:bg-home-tablet lg:bg-home-desktop"
