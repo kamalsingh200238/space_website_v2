@@ -75,12 +75,12 @@ export default function Destination({
                     })}
                   </div>
                   <div>
-                    <h2 className="mb-6 font-bellefair text-6xl md:text-7xl">
+                    <h2 className="mb-6 font-bellefair text-6xl md:text-7xl lg:text-8xl">
                       {activeDestination.name}
                     </h2>
                   </div>
                   <div>
-                    <p className="mb-8 max-w-lg font-barlow text-seconday-500 md:mb-12">
+                    <p className="mb-8 max-w-lg font-barlow text-seconday-500 md:mb-12 lg:text-lg">
                       {activeDestination.description}
                     </p>
                   </div>
