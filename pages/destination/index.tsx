@@ -3,6 +3,7 @@ import path from "path";
 import { Data } from "@/lib/types/Data";
 import Image from "next/image";
 import { useState } from "react";
+import Heading from "@/components/Heading";
 
 export async function getStaticProps() {
   // get the path
@@ -40,12 +41,7 @@ export default function Destination({
         <main className="">
           <section className="hero-size grid justify-center px-6 py-28 md:px-40 md:py-52">
             <div className="max-w-5xl">
-              <div className="tracking-widest">
-                <h1 className="mb-8 text-center font-barlow-condensed uppercase md:mb-14 md:text-left md:text-xl lg:mb-16 lg:text-3xl">
-                  <span className="mr-4 text-white/25">01</span>Pick Your
-                  Destination
-                </h1>
-              </div>
+              <Heading headingNumber="01" headingText="Pick your destination" />
               <div className="grid items-start gap-6 md:gap-14 lg:grid-cols-2 lg:gap-40">
                 <div className="relative aspect-square w-44 justify-self-center md:w-72 lg:w-120">
                   <Image
@@ -55,7 +51,7 @@ export default function Destination({
                   />
                 </div>
                 <div className="text-center lg:text-left">
-                  <div className="mb-5 flex justify-center gap-7 md:mb-8 md:gap-9 lg:justify-start lg:mb-9">
+                  <div className="mb-5 flex justify-center gap-7 md:mb-8 md:gap-9 lg:mb-9 lg:justify-start">
                     {destinationData.map((destination, index) => {
                       return (
                         <button
