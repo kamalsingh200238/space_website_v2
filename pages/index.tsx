@@ -1,25 +1,5 @@
 import Head from "next/head";
-import { Barlow, Barlow_Condensed, Bellefair } from "@next/font/google";
-import Navbar from "@/components/Navbar";
 import Link from "next/link";
-
-const barlow = Barlow({
-  subsets: ["latin"],
-  variable: "--barlow-font",
-  weight: ["400", "700"],
-});
-
-const barlowCondensed = Barlow_Condensed({
-  subsets: ["latin"],
-  variable: "--barlow-condensed-font",
-  weight: ["400", "700"],
-});
-
-const bellefair = Bellefair({
-  subsets: ["latin"],
-  variable: "--bellefair-font",
-  weight: ["400"],
-});
 
 export default function Home() {
   return (
@@ -30,9 +10,8 @@ export default function Home() {
         <link rel="icon" href="/logo.svg" />
       </Head>
       <div
-        className={`min-h-screen bg-primary-500 text-white ${barlow.variable} ${barlowCondensed.variable} ${bellefair.variable}`}
+        className="min-h-screen bg-primary-500 text-white"
       >
-        <Navbar />
         <div
           id="content"
           className="bg-home-mobile bg-cover bg-no-repeat md:bg-home-tablet lg:bg-home-desktop"
