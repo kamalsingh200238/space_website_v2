@@ -40,7 +40,7 @@ module.exports = {
         "destination-mobile": "url('/destination/background-destination-mobile.jpg')",
         "destination-tablet": "url('/destination/background-destination-tablet.jpg')",
         "destination-desktop":
-          "url('/destination/background-home-destination.jpg')",
+          "url('/destination/background-destination-destination.jpg')",
         "crew-mobile": "url('/crew/background-crew-mobile.jpg')",
         "crew-tablet": "url('/crew/background-crew-tablet.jpg')",
         "crew-desktop": "url('/crew/background-crew-desktop.jpg')",
