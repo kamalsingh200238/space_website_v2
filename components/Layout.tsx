@@ -1,10 +1,10 @@
 import Navbar from "./Navbar";
 
 interface Props {
-  children : JSX.Element
+  children: JSX.Element;
 }
 
-export default function Layout({ children } : Props) {
+export default function Layout({ children }: Props) {
   return (
     <>
       <Navbar />
