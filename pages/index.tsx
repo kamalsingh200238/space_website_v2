@@ -16,7 +16,7 @@ export default function Home() {
           id="content"
           className="bg-home-mobile bg-cover bg-no-repeat md:bg-home-tablet lg:bg-home-desktop"
         >
-          <main className="content">
+          <main className="">
             <section className="hero-size grid place-items-center px-6 py-24 md:px-40 md:py-52">
               <div className="max-w-5xl">
                 <div className="grid gap-20 text-center md:gap-36 lg:grid-cols-2">
