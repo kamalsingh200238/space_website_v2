@@ -55,7 +55,7 @@ export default function Destination({
                   />
                 </div>
                 <div className="text-center lg:text-left">
-                  <div className="mb-5 flex justify-center gap-7 md:mb-8 md:gap-9 lg:justify-start">
+                  <div className="mb-5 flex justify-center gap-7 md:mb-8 md:gap-9 lg:justify-start lg:mb-9">
                     {destinationData.map((destination, index) => {
                       return (
                         <button
