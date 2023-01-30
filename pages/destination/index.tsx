@@ -27,8 +27,6 @@ export default function Destination({
   const [count, setCount] = useState(0);
   const activeDestination = destinationData[count];
 
-  console.log({ count, activeDestination });
-
   function handleButtonClick(index: number) {
     setCount(index);
   }
@@ -48,7 +46,7 @@ export default function Destination({
                   Destination
                 </h1>
               </div>
-              <div className="grid items-start gap-6 md:gap-14">
+              <div className="grid items-start gap-6 md:gap-14 lg:grid-cols-2">
                 <div className="relative aspect-square w-44 justify-self-center md:w-72">
                   <Image
                     src={activeDestination.images.webp}
