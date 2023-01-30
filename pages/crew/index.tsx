@@ -1,7 +1,29 @@
 import Heading from "@/components/Heading";
 import Image from "next/image";
 
-export default function Crew() {
+import { Data } from "@/lib/types/Data";
+
+import fsPromises from "fs/promises";
+import path from "path";
+export async function getStaticProps() {
+  // get the path
+  const dataPath = path.join(process.cwd(), "lib/data/data.json");
+  // read the file
+  const resp = await fsPromises.readFile(dataPath);
+  const data = JSON.parse(resp.toString()) as Data;
+
+  return {
+    props: {
+      crewData: data.crew,
+    },
+  };
+}
+
+interface Props {
+  crewData: Data["crew"];
+}
+
+export default function Crew({ crewData }: Props) {
   return (
     <div className="min-h-screen bg-primary-500 text-white">
       <div
@@ -17,5 +39,5 @@ export default function Crew() {
         </main>
       </div>
     </div>
-  )
+  );
 }
