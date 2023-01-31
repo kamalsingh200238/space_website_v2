@@ -12,8 +12,10 @@ module.exports = {
   ],
   theme: {
     extend: {
-      spacing : {
-        120: "30rem"
+      spacing: {
+        104: "26rem",
+        120: "30rem",
+        144: "36rem",
       },
       colors: {
         primary: {
@@ -37,7 +39,7 @@ module.exports = {
           // 700: "",
           // 800: "",
           // 900: "",
-        }
+        },
       },
       fontFamily: {
         bellefair: ["var(--bellefair-font)", ...defaultTheme.fontFamily.sans],
@@ -51,8 +53,10 @@ module.exports = {
         "home-mobile": "url('/home/background-home-mobile.jpg')",
         "home-tablet": "url('/home/background-home-tablet.jpg')",
         "home-desktop": "url('/home/background-home-desktop.jpg')",
-        "destination-mobile": "url('/destination/background-destination-mobile.jpg')",
-        "destination-tablet": "url('/destination/background-destination-tablet.jpg')",
+        "destination-mobile":
+          "url('/destination/background-destination-mobile.jpg')",
+        "destination-tablet":
+          "url('/destination/background-destination-tablet.jpg')",
         "destination-desktop":
           "url('/destination/background-destination-desktop.jpg')",
         "crew-mobile": "url('/crew/background-crew-mobile.jpg')",
