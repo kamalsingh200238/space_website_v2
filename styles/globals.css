@@ -72,7 +72,7 @@
   z-index: 1;
 }
 .splide__arrow svg {
-  fill: #20b2aa;
+  fill: #ffffff;
   height: 2.5em;
   transition: fill 0.2s linear;
   width: 2.5em;
@@ -101,12 +101,17 @@
   outline-offset: 3px;
 }
 .splide__pagination {
-  bottom: 1em;
+  bottom: -3em;
   left: 0;
   padding: 0 1em;
   position: absolute;
   right: 0;
   z-index: 1;
+}
+@media (min-width: 1024px) {
+  .splide__pagination {
+    left: -150%;
+  }
 }
 .splide__pagination__page {
   background: #ccc;
