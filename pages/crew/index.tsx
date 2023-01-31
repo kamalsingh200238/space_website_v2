@@ -5,7 +5,6 @@ import { Data } from "@/lib/types/Data";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 // import "@splidejs/react-splide/css";
 // import "@splidejs/react-splide/css/sea-green";
-import styles from "../../styles/crew.module.css"
 
 import fsPromises from "fs/promises";
 import path from "path";
