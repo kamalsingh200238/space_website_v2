@@ -1,8 +1,10 @@
 import useClickOutsideToClose from "@/lib/hooks/useClickOutsideToClose";
+import useIsScrolledToTop from "@/lib/hooks/useIsScrolledToTop";
+import useScorllDirection from "@/lib/hooks/useScrollDirection";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const navbarLinks = [
   {
@@ -26,6 +28,8 @@ const navbarLinks = [
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const domNode = useClickOutsideToClose(closeMenu);
+  const scrollDirection = useScorllDirection();
+  const isScrolledToTop = useIsScrolledToTop();
 
   const pathName = usePathname();
 
@@ -42,8 +46,24 @@ export default function Navbar() {
     return String("0" + index).slice(-2);
   };
 
+  useEffect(() => {
+    if (window.innerWidth < 768) {
+      // toggle classes when isMenuOpen is true
+      document.body.classList.toggle("max-md:overflow-hidden", isMenuOpen);
+      document
+        ?.getElementById("content")
+        ?.classList.toggle("max-md:blur-sm", isMenuOpen);
+    }
+  }, [isMenuOpen]);
+
   return (
-    <header className="fixed top-0 z-30 flex h-24 w-screen items-center justify-between bg-primary-500/20 px-6 font-barlow-condensed text-lg tracking-widest text-white backdrop-blur-lg lg:px-12">
+    <header
+      className={`${
+        isScrolledToTop ? "h-24" : "h-16 bg-primary-500/20 backdrop-blur-lg"
+      } ${scrollDirection === "up" && !isScrolledToTop ? "top-0" : ""} ${
+        scrollDirection === "down" && !isScrolledToTop ? "-top-full" : ""
+      } fixed top-0 z-30 flex w-screen items-center justify-between px-6 font-barlow-condensed text-lg tracking-widest text-white lg:px-12 transition-all duration-200`}
+    >
       {/*main logo*/}
       <Link
         href={"/"}
