@@ -7,7 +7,7 @@ export default function Home() {
       <Head>
         <title>Space Website</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/logo.svg" />
+        <link rel="icon" href="/shared/logo.svg" />
       </Head>
       <div className="min-h-screen bg-primary-500 text-white">
         <div
