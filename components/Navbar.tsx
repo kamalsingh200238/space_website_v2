@@ -136,9 +136,9 @@ export default function Navbar() {
                 <li key={item.link} className="relative">
                   <Link
                     href={item.link}
-                    className={`grid items-center border-b-2 border-b-transparent transition-all duration-200 hover:border-b-white/50 ${
-                      isScrolledToTop ? "h-24" : "h-16"
-                    } ${pathName === item.link ? "border-b-white" : ""}`}
+                    className={`${isScrolledToTop ? "h-24" : "h-16"} ${
+                      pathName === item.link ? "border-b-white" : "hover:border-b-white/50 "
+                    } grid items-center border-b-2 border-b-transparent transition-all duration-200 `}
                   >
                     <div>
                       <span className="mr-3 font-bold">
