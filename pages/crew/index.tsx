@@ -55,6 +55,7 @@ export default function Crew({ crewData }: Props) {
                     }}
                     options={{
                       rewind: true,
+                      keyboard: "global",
                       gap: "3rem",
                     }}
                   >
