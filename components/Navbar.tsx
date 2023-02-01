@@ -58,11 +58,11 @@ export default function Navbar() {
 
   return (
     <header
-      className={`${
-        isScrolledToTop ? "h-24" : "h-16 bg-primary-500/20 backdrop-blur-lg"
-      } ${scrollDirection === "up" && !isScrolledToTop ? "top-0" : ""} ${
+      className={`${isScrolledToTop ? "h-24" : "h-16"} ${
+        scrollDirection === "up" && !isScrolledToTop ? "top-0" : ""
+      } ${
         scrollDirection === "down" && !isScrolledToTop ? "-top-full" : ""
-      } fixed top-0 z-30 flex w-screen items-center justify-between px-6 font-barlow-condensed text-lg tracking-widest text-white transition-all duration-200 lg:px-12`}
+      } fixed top-0 z-30 flex w-screen items-center justify-between bg-primary-500/20 px-6 font-barlow-condensed text-lg tracking-widest text-white backdrop-blur-lg transition-all duration-200 lg:px-12`}
     >
       {/*main logo*/}
       <Link
