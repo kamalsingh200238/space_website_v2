@@ -147,11 +147,6 @@ export default function Navbar() {
                       <span className="uppercase">{item.displayText}</span>
                     </div>
                   </Link>
-                  {/* <div */}
-                  {/*   className={`absolute bottom-0 h-0.5 w-full bg-white ${ */}
-                  {/*     pathName === item.link ? "opacity-100" : "opacity-0" */}
-                  {/*   }`} */}
-                  {/* ></div> */}
                 </li>
               );
             })}
