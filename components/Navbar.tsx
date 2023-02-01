@@ -137,7 +137,9 @@ export default function Navbar() {
                   <Link
                     href={item.link}
                     className={`${isScrolledToTop ? "h-24" : "h-16"} ${
-                      pathName === item.link ? "border-b-white" : "hover:border-b-white/50 "
+                      pathName === item.link
+                        ? "border-b-white"
+                        : "hover:border-b-white/50 "
                     } grid items-center border-b-2 border-b-transparent transition-all duration-200 `}
                   >
                     <div>
