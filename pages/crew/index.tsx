@@ -28,7 +28,6 @@ interface Props {
 }
 
 export default function Crew({ crewData }: Props) {
-  //todo write the logic to change the data when slide moves
   const [count, setCount] = useState(0);
   const activeCrew = crewData[count];
 
