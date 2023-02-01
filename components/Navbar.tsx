@@ -139,8 +139,8 @@ export default function Navbar() {
                     className={`${isScrolledToTop ? "h-24" : "h-16"} ${
                       pathName === item.link
                         ? "border-b-white"
-                        : "hover:border-b-white/50 "
-                    } grid items-center border-b-2 border-b-transparent transition-all duration-200 `}
+                        : "border-b-transparent hover:border-b-white/50"
+                    } grid items-center border-b-2 transition-all duration-200 `}
                   >
                     <div>
                       <span className="mr-3 font-bold">
