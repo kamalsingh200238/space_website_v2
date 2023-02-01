@@ -55,6 +55,7 @@ export default function Technology({
                     }}
                     options={{
                       rewind: true,
+                      keyboard: "global",
                       gap: "3rem",
                     }}
                   >
