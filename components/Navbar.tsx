@@ -62,7 +62,7 @@ export default function Navbar() {
         isScrolledToTop ? "h-24" : "h-16 bg-primary-500/20 backdrop-blur-lg"
       } ${scrollDirection === "up" && !isScrolledToTop ? "top-0" : ""} ${
         scrollDirection === "down" && !isScrolledToTop ? "-top-full" : ""
-      } fixed top-0 z-30 flex w-screen items-center justify-between px-6 font-barlow-condensed text-lg tracking-widest text-white lg:px-12 transition-all duration-200`}
+      } fixed top-0 z-30 flex w-screen items-center justify-between px-6 font-barlow-condensed text-lg tracking-widest text-white transition-all duration-200 lg:px-12`}
     >
       {/*main logo*/}
       <Link
@@ -136,18 +136,22 @@ export default function Navbar() {
                 <li key={item.link} className="relative">
                   <Link
                     href={item.link}
-                    className={`shadow-border-b inline-block transition-all duration-200 md:py-8`}
+                    className={`grid items-center border-b-2 border-b-transparent transition-all duration-200 hover:border-b-white/50 ${
+                      isScrolledToTop ? "h-24" : "h-16"
+                    } ${pathName === item.link ? "border-b-white" : ""}`}
                   >
-                    <span className="mr-3 font-bold">
-                      {addZeroInFront(index)}
-                    </span>
-                    <span className="uppercase">{item.displayText}</span>
+                    <div>
+                      <span className="mr-3 font-bold">
+                        {addZeroInFront(index)}
+                      </span>
+                      <span className="uppercase">{item.displayText}</span>
+                    </div>
                   </Link>
-                  <div
-                    className={`absolute bottom-0 h-0.5 w-full bg-white ${
-                      pathName === item.link ? "opacity-100" : "opacity-0"
-                    }`}
-                  ></div>
+                  {/* <div */}
+                  {/*   className={`absolute bottom-0 h-0.5 w-full bg-white ${ */}
+                  {/*     pathName === item.link ? "opacity-100" : "opacity-0" */}
+                  {/*   }`} */}
+                  {/* ></div> */}
                 </li>
               );
             })}
