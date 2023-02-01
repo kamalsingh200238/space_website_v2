@@ -77,13 +77,17 @@ export default function Crew({ crewData }: Props) {
                 </div>
                 <div className="text-center lg:text-left">
                   <div>
-                    <p className="font-bellefair mb-2 md:text-2xl lg:text-4xl">{activeCrew.role}</p>
+                    <p className="mb-2 font-bellefair md:text-2xl lg:text-4xl">
+                      {activeCrew.role}
+                    </p>
                   </div>
                   <div>
-                    <p className="font-bellefair text-2xl mb-4 md:text-4xl lg:text-6xl">{activeCrew.name}</p>
+                    <p className="mb-4 font-bellefair text-2xl md:text-4xl lg:text-6xl">
+                      {activeCrew.name}
+                    </p>
                   </div>
                   <div>
-                    <p className="font-barlow min-h-[10rem] lg:text-lg">
+                    <p className="min-h-[10rem] font-barlow lg:text-lg">
                       {activeCrew.bio}
                     </p>
                   </div>
@@ -93,6 +97,22 @@ export default function Crew({ crewData }: Props) {
           </section>
         </main>
       </div>
+      <style jsx global>
+        {`
+          .splide {
+            padding: 0;
+          }
+          .splide__pagination {
+            bottom: -2em;
+          }
+          @media (min-width: 1024px) {
+            .splide__pagination {
+              bottom: -4em;
+              left: -150%;
+            }
+          }
+        `}
+      </style>
     </div>
   );
 }
