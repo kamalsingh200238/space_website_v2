@@ -135,6 +135,7 @@ export default function Navbar() {
               return (
                 <li key={item.link} className="relative">
                   <Link
+                    onClick={closeMenu}
                     href={item.link}
                     className={`${isScrolledToTop ? "md:h-24" : "md:h-16"} ${
                       pathName === item.link
