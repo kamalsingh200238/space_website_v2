@@ -2,7 +2,7 @@ import fsPromises from "fs/promises";
 import path from "path";
 import { Data } from "@/lib/types/Data";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Heading from "@/components/Heading";
 
 export async function getStaticProps() {
@@ -31,6 +31,24 @@ export default function Destination({
   function handleButtonClick(index: number) {
     setCount(index);
   }
+
+  function handleKeyDown(e: KeyboardEvent) {
+    if (e.key === "ArrowLeft") {
+      setCount((prev) => (prev === 0 ? prev : prev - 1));
+    } else if (e.key === "ArrowRight") {
+      setCount((prev) =>
+        prev === destinationData.length - 1 ? prev : prev + 1
+      );
+    }
+  }
+
+  useEffect(() => {
+    window.addEventListener("keydown", handleKeyDown);
+    return () => {
+      window.addEventListener("keydown", handleKeyDown);
+    };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <div className="min-h-screen bg-primary-500 text-white">
