@@ -105,6 +105,12 @@ export default function Crew({ crewData }: Props) {
           .splide__pagination {
             bottom: -2em;
           }
+          .splide__arrow--prev {
+            left: -1em;
+          }
+          .splide__arrow--next {
+            right: -1em;
+          }
           @media (min-width: 1024px) {
             .splide__pagination {
               bottom: -4em;
